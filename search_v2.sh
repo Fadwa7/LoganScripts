@@ -1,49 +1,53 @@
 #!/bin/bash
 
-# Nombre d'arguments
-if [ $# -lt 2 ]; then
-    echo "Usage: $0 <FASTA_FOLDER> <KMER_FILE>"
+# Vérification du nombre d'arguments
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 <DATA_FOLDER> <QUERY_FILE>"
     exit 1
 fi
 
-# Arguments
-FASTA_FOLDER=$1
-KMER_FILE=$2
+# Assignation des arguments
+if [ "$1" = "." ]; then
+    DATA_FOLDER=$(pwd)
+else
+    DATA_FOLDER="$1"
+fi
+QUERY_FILE="$2"
 
 # Vérification de l'existence du fichier de k-mers
-if [ ! -f "$KMER_FILE" ]; then
-    echo "The file $KMER_FILE is not found"
+if [ ! -f "$QUERY_FILE" ]; then
+    echo "The file $QUERY_FILE is not found"
     exit 1
 fi
 
-# Vérification de l'existence du répertoire FASTA
-if [ ! -d "$FASTA_FOLDER" ]; then
-    echo "The directory $FASTA_FOLDER does not exist"
-    exit 1
-fi 
+# Liste des k-mers 
+QUERY_LIST=$(sed 's/^/ -q /' "$QUERY_FILE" | tr -d '\r\n')
+QUERY=$(cat "$QUERY_FILE")
+echo -e "List of queries:\n$QUERY"
 
-# Liste de k-mers 
-KMER_LIST=$(sed 's/^/ -q /' "$KMER_FILE" | tr -d '\r\n')
-KMER=$(cat "$KMER_FILE")
-echo -e "List of query : \n$KMER"
-
-# Déplacement vers le répertoire FASTA
+# Déplacement vers le répertoire DATA
 echo "Searching for queries..."
-cd "$FASTA_FOLDER" || exit
+cd "$DATA_FOLDER" || exit
 
-# Boucle sur les fichiers FASTA dans le répertoire
-for file in *.fa; do
-    UNITIG_ID=$(basename "$file" .unitigs.fa)
+# Boucle sur les fichiers DATA dans le répertoire
+for file in *; do
+    if [[ $file == *.unitigs.fa ]]; then
+        UNITIG_ID=$(basename "$file" .unitigs.fa)
+    elif [[ $file == *.unitigs.fa.zst ]]; then
+        UNITIG_ID=$(basename "$file" .unitigs.fa.zst)
+    else
+        continue
+    fi
+    
     ID=${UNITIG_ID%%.*}
     echo ""
     echo "~~~~~~ Query result for $ID ~~~~~~~"
     echo ""
     echo ""
-    result=$(rcgrep "$ID.unitigs.fa" $KMER_LIST --grepargs "-B 1 --no-group-separator")
-    if [ -z "$result" ]; then
-       echo "No occurences found." 
-    else
-       echo "$result"
+    if [[ $file == *.zst ]]; then
+        zstdcat "$file" | rcgrep $QUERY_LIST --grepargs "-B 1 --no-group-separator" -
+    elif [[ $file == *.fa ]]; then
+        rcgrep "$file" $QUERY_LIST --grepargs "-B 1 --no-group-separator"
     fi
 done
 
