@@ -4,6 +4,7 @@
 Prior to using this script, ensure you have installed the following:
 - Aws CLI
 - rcgrep
+- zstd
 
 ### To install aws CLI, please follow the instractions via :
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
