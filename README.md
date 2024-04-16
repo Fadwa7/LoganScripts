@@ -24,17 +24,18 @@ To test the script, you'll need two files: id_accessions.txt and query_test.txt.
 
 Execute the following command:
 
-` ./download.sh $PATH/TO/ID_ACCESSIONS_FILE $PATH_TO_OUTPUT_DIRECTORY `
+` ./download.sh $PATH/TO/ID_ACCESSIONS_FILE . `
 
 - $ACCESSIONS_LIST : id_accessions.txt
 - $PATH_TO_OUTPUT_DIRECTORY : The absolute path to the output directory, e.g : . (current directory)
   
-this script create this tree :
+Output :
 ```
-|-- COMPRESSED
-|   -- SRR10030979.unitigs.fa.zst
-|-- FASTA
-    -- SRR10030979.unitigs.fa
+SRR10030979.unitigs.fa.zst
+SRR10030980.unitigs.fa.zst
+SRR10030981.unitigs.fa.zst
+SRR10030982.unitigs.fa.zst
+SRR10030983.unitigs.fa.zst
 ```
 
 ### Search for queries:
