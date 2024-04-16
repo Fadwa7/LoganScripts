@@ -24,10 +24,10 @@ To test the script, you'll need two files: id_accessions.txt and query_test.txt.
 
 Execute the following command:
 
-` ./download.sh $PATH/TO/ID_ACCESSIONS_FILE $NAME_OF_OUTPUT_DIRECTORY `
+` ./download.sh $PATH/TO/ID_ACCESSIONS_FILE $PATH_TO_OUTPUT_DIRECTORY `
 
 - $ACCESSIONS_LIST : id_accessions.txt
-- $NAME_OF_OUTPUT_DIRECTORY : The desired name of the output directory, e.g., Test.
+- $PATH_TO_OUTPUT_DIRECTORY : The absolute path to the output directory, e.g : . (current directory)
   
 this script create this tree :
 ```
@@ -42,10 +42,10 @@ this script create this tree :
 Use the script: search_v2.sh.
 Execute the following command:
 
-` ./search.sh  $PATH/TO/FASTA/FOLDER $PATH/TO/QUERY_LIST_FILE `
+` ./search.sh  . $PATH/TO/QUERY_LIST_FILE `
 
 In the example: 
-- FASTA_FOLDER : "Test/FASTA"
+- DATA_FOLDER : . (for current directory)
 - QUERY_LIST_FILE: query_test.txt
 
 In the terminal you should have this output
