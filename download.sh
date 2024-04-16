@@ -2,7 +2,7 @@
 
 # Vérification du nombre d'arguments
 if [ $# -lt 2 ]; then
-    echo "Usage: $0 <ACCESSIONS_LIST> <DESTINATION_DIRECTORY_NAME>"
+    echo "Usage: $0 <ACCESSIONS_LIST> <DESTINATION_DIRECTORY>"
     exit 1
 fi
 
@@ -19,27 +19,10 @@ fi
 
 # Création du répertoire de destination s'il n'existe pas
 if [ ! -d "$DESTINATION_DIRECTORY" ]; then
-    mkdir -p "$DESTINATION_DIRECTORY"
+    echo "Please identify the output directory"
 fi 
 
 
 
 # Téléchargement des fichiers depuis S3
-cat "$ACCESSIONS_LIST" | xargs -I{} aws s3 cp s3://logan-pub/u/{}/{}.unitigs.fa.zst "$DESTINATION_DIRECTORY/" --no-sign-request 
-
-
-
-# Décompression des fichiers .zst et recherche des k-mers
-echo "Decompressing .zst files..."
-cd "$DESTINATION_DIRECTORY"
-for file in *.zst; do
-    # Extraction du nom de fichier sans extension
-    UNITIG_ID=$(basename "$file" .unitigs.fa.zst)
-    ID=${UNITIG_ID%%.*}
-    zstd -d "$file"
-    echo "All files are decompressed"
-done
-
-fasta="FASTA"
-mkdir -p "$fasta"
-mv *.fa  $fasta
+cat "$ACCESSIONS_LIST" | xargs -I{} aws s3 cp s3://logan-pub/u/{}/{}.unitigs.fa.zst "$DESTINATION_DIRECTORY" --no-sign-request
