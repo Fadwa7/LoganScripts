@@ -6,7 +6,7 @@ For more informations : https://github.com/IndexThePlanet/Logan
 
 ## Requirements: 
 Prior to using this script, ensure you have installed the following:
-- Aws CLI
+- aws CLI
 - rcgrep
 - zstd
 
