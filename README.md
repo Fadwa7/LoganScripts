@@ -15,7 +15,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 Execute the command line : 
 - ` git clone https://github.com/Fadwa7/Scripts_Logan.git `
 - ` cd Scripts_Logan `
-- 
+  
 ### Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
 
