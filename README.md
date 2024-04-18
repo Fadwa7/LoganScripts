@@ -22,8 +22,8 @@ We recommand installing zstd via conda.<br>
 
 ### Cloning
 Execute the command line : 
-` git clone https://github.com/Fadwa7/Scripts_Logan.git ` <br>
-` cd Scripts_Logan ` <br>
+- ` git clone https://github.com/Fadwa7/Scripts_Logan.git `
+- ` cd Scripts_Logan `
   
 ## Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
