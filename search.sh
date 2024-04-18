@@ -8,8 +8,8 @@ fi
 
 # Arguments
 
-LIST_PATH_FILES="$1"
-QUERY_FILE="$2"
+LIST_PATH_FILES="$1" #Text file containing paths for unitig files (zst or fa)
+QUERY_FILE="$2" #Text file containing  queries (in fasta fomat *.fa or *.fasta , or other format ,e.g : txt)
 
 #  Checking the existence of files 
 
