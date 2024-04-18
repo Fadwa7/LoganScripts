@@ -8,7 +8,7 @@ fi
 
 # Arguments
 ACCESSIONS_LIST=$1 # Text file containing ID accession for your data (make sure that your data have been published before december 2023)
-DESTINATION_DIRECTORY=$2 #Path to your output director or . for the current directory. 
+DESTINATION_DIRECTORY=$2 #Path to your output director
 
 # Checking the existence of paths 
 if [ ! -f "$ACCESSIONS_LIST" ]; then
