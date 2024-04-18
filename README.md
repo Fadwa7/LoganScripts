@@ -7,8 +7,8 @@ For more informations : https://github.com/IndexThePlanet/Logan
 ## Requirements: 
 Prior to using this script, ensure you have installed the following:
 - aws CLI
-- rcgrep
-- zstd
+- rcgrep (v0.1.0)
+- zstd (v1.5.5)
 
 ### To install aws CLI, please follow the instractions via :
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
