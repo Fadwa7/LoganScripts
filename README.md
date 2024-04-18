@@ -17,13 +17,13 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 `pip install rcgrep`
 
 ### To install zstd please execute the command line 
-We recommand installing zstd via conda.
+We recommand installing zstd via conda.<br>
 ` conda install anaconda::zstd `
 
 ### Cloning
 Execute the command line : 
-- ` git clone https://github.com/Fadwa7/Scripts_Logan.git `
-- ` cd Scripts_Logan `
+` git clone https://github.com/Fadwa7/Scripts_Logan.git ` <br>
+` cd Scripts_Logan ` <br>
   
 ## Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
@@ -51,7 +51,7 @@ ERR1880172.unitigs.fa.zst
 
 To execute **search.sh** script, you'll need two files: paths.txt and query.fa
 - **paths.txt**: contains abolute path to your samples (.zst or .fa)
-- **query.fa**:  contains queries to search each query on a separate line. (make sure you use the .fasta or .fa extension)
+- **query.fa**:  contains queries to search each query on a separate line. (make sure you use the .fasta or .fa extension) <br>
   *N.B: you can use a simple file instead of the fasta format, with each query on its own line.*
 
 Execute the following command:
