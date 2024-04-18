@@ -16,6 +16,11 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 ### To install rcgrep please execute the command line 
 `pip install rcgrep`
 
+### To install zstd please execute the command line 
+We recommand installing zstd via conda 
+` conda install anaconda::zstd `
+
+### Cloning
 Execute the command line : 
 - ` git clone https://github.com/Fadwa7/Scripts_Logan.git `
 - ` cd Scripts_Logan `
