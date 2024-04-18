@@ -1,0 +1,5 @@
+Scripts_Logan/ERR1880167.unitigs.fa.zst
+Scripts_Logan/ERR1880168.unitigs.fa.zst
+Scripts_Logan/ERR1880169.unitigs.fa.zst
+Scripts_Logan/ERR1880170.unitigs.fa.zst
+Scripts_Logan/ERR1880172.unitigs.fa.zst
