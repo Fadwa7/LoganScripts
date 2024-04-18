@@ -22,8 +22,8 @@ In this example we download unitigs for 5 pancreatic cancer samples and search t
 ### Downloading files using id_accessions.txt:
 
 To execute **download.sh** script, you'll need two files: id_accessions.txt and a directory
-- id_accessions.txt: contains SRR Identifiers for your samples, with each ID on a separate line.
-- directory : The absolute path to the output directory, e.g : . (current directory)
+- **id_accessions.txt**: contains SRR Identifiers for your samples, with each ID on a separate line.
+- **directory** : The absolute path to the output directory, e.g : . (current directory)
   
 Execute the following command:
 
@@ -41,8 +41,8 @@ ERR1880172.unitigs.fa.zst
 ### Search for queries:
 
 To execute **search.sh** script, you'll need two files: paths.txt and query.fa
-- paths.txt: contains abolute path to your samples (.zst or .fa)
-- query.fa:  contains queries to search each query on a separate line. (make sure you use the .fasta or .fa extension)
+- **paths.txt**: contains abolute path to your samples (.zst or .fa)
+- **query.fa**:  contains queries to search each query on a separate line. (make sure you use the .fasta or .fa extension)
   *N.B: you can use a simple file instead of the fasta format, with each query on its own line.*
 
 Execute the following command:
