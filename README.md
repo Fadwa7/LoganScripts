@@ -16,7 +16,7 @@ Execute the command line :
 - ` git clone https://github.com/Fadwa7/Scripts_Logan.git `
 - ` cd Scripts_Logan `
   
-### Tutorial :
+## Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
 
 ### Downloading files using id_accessions.txt:
