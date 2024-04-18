@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# Vérification du nombre d'arguments
+# Number of arguments
 if [ "$#" -lt 2 ]; then
     echo "Usage: $0 <LIST_PATH_FILES> <QUERY_FILE>"
     exit 1
 fi
 
-# Assignation des arguments
+# Arguments
+
 LIST_PATH_FILES="$1"
 QUERY_FILE="$2"
 
-# Vérification de l'existence du fichier de k-mers
+#  Checking the existence of files 
+
 if [ ! -f "$QUERY_FILE" ]; then
     echo "The file $QUERY_FILE is not found"
     exit 1
@@ -21,14 +23,23 @@ if [ ! -f "$LIST_PATH_FILES" ]; then
     exit 1
 fi
 
-# Liste des k-mers 
-QUERY_LIST=$(sed 's/^/ -q /' "$QUERY_FILE" | tr -d '\r\n')
-QUERY=$(cat "$QUERY_FILE")
+# Handeling query file (if *.txt *.fa or *.fasta)
+case "$QUERY_FILE" in
+    *.fa|*.fasta)
+        QUERY_LIST=$(grep -v '^>' "$QUERY_FILE" | sed 's/^/ -q /' | tr -d '\r\n')
+        QUERY=$(grep -v '^>' "$QUERY_FILE")
+        ;;
+    *)
+        QUERY_LIST=$(sed 's/^/ -q /' "$QUERY_FILE" | tr -d '\r\n')
+        QUERY=$(cat "$QUERY_FILE")
+        ;;
+esac
+
 echo -e "List of queries:\n$QUERY"
 
 echo "Searching for queries..."
 
-# Boucle sur les fichiers DATA dans le répertoire
+# Looping over DATA files in the directory
 while IFS= read -r file; do
     if [ ! -f "$file" ]; then
         echo "File $file not found, skipping..."
