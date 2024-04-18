@@ -36,7 +36,7 @@ To execute **download.sh** script, you'll need two files: id_accessions.txt and 
   
 Execute the following command:
 
-` ./download.sh $PATH/TO/ID_ACCESSIONS_FILE . `
+` ./download.sh id_accessions.txt . `
   
 Output :
 ```
@@ -56,7 +56,7 @@ To execute **search.sh** script, you'll need two files: paths.txt and query.fa
 
 Execute the following command:
 
-` ./search.sh  . $PATH/TO/QUERY_LIST_FILE `
+` ./search.sh  paths.txt query.fa `
 
 In the terminal you should have this output
 
