@@ -98,7 +98,8 @@ CTGAATATAAACTTGTGGTAGTTGGAGCTGATGGCGTAGGCAAGAGTGC
 Process completed successfully.
 
 ```
-
+If you have any suggesions, please contact us via : 
+fadwa.el-khaddar@i2bc.paris-saclay.fr
 
 
 
