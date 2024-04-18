@@ -1,4 +1,8 @@
-# Custom scripts to interact with the Logan database.
+# Custom scripts to interact with the Logan dataset.
+
+Logan is a dataset comprising DNA and RNA sequences derived from a December 2023 snapshot of the entire NCBI Sequence Read Archive through genome assembly. It offers two sets of related sequences: unitigs and contigs. Unitigs retain nearly all original sample information, while contigs minimize variation to increase sequence lengths. Both datasets are available on a public S3 bucket provided by the Registry of Open Data at AWS, in compressed form. Downloading either unitigs or contigs enables users to access the extensive information within the SRA 10x (40x for contigs) more efficiently in terms of time and disk space compared to raw reads, albeit with minor sensitivity loss and enhanced contiguity.
+
+For more informations : https://github.com/IndexThePlanet/Logan 
 
 ## Requirements: 
 Prior to using this script, ensure you have installed the following:
