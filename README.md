@@ -17,7 +17,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 `pip install rcgrep`
 
 ### To install zstd please execute the command line 
-We recommand installing zstd via conda 
+We recommand installing zstd via conda.
 ` conda install anaconda::zstd `
 
 ### Cloning
