@@ -2,16 +2,12 @@
 
 # Vérification du nombre d'arguments
 if [ "$#" -lt 2 ]; then
-    echo "Usage: $0 <DATA_FOLDER> <QUERY_FILE>"
+    echo "Usage: $0 <LIST_PATH_FILES> <QUERY_FILE>"
     exit 1
 fi
 
 # Assignation des arguments
-if [ "$1" = "." ]; then
-    DATA_FOLDER=$(pwd)
-else
-    DATA_FOLDER="$1"
-fi
+LIST_PATH_FILES="$1"
 QUERY_FILE="$2"
 
 # Vérification de l'existence du fichier de k-mers
@@ -20,36 +16,37 @@ if [ ! -f "$QUERY_FILE" ]; then
     exit 1
 fi
 
+if [ ! -f "$LIST_PATH_FILES" ]; then
+    echo "The file $LIST_PATH_FILES is not found"
+    exit 1
+fi
+
 # Liste des k-mers 
 QUERY_LIST=$(sed 's/^/ -q /' "$QUERY_FILE" | tr -d '\r\n')
 QUERY=$(cat "$QUERY_FILE")
 echo -e "List of queries:\n$QUERY"
 
-# Déplacement vers le répertoire DATA
 echo "Searching for queries..."
-cd "$DATA_FOLDER" || exit
 
 # Boucle sur les fichiers DATA dans le répertoire
-for file in *; do
-    if [[ $file == *.unitigs.fa ]]; then
-        UNITIG_ID=$(basename "$file" .unitigs.fa)
-    elif [[ $file == *.unitigs.fa.zst ]]; then
-        UNITIG_ID=$(basename "$file" .unitigs.fa.zst)
-    else
+while IFS= read -r file; do
+    if [ ! -f "$file" ]; then
+        echo "File $file not found, skipping..."
         continue
     fi
-    
-    ID=${UNITIG_ID%%.*}
+
     echo ""
-    echo "~~~~~~ Query result for $ID ~~~~~~~"
+    echo "~~~~~~ Query result for $file ~~~~~~~"
     echo ""
-    echo ""
+
     if [[ $file == *.zst ]]; then
         zstdcat "$file" | rcgrep $QUERY_LIST --grepargs "-B 1 --no-group-separator" -
     elif [[ $file == *.fa ]]; then
         rcgrep "$file" $QUERY_LIST --grepargs "-B 1 --no-group-separator"
+    else
+        echo "Unsupported file format: $file"
     fi
-done
+done < "$LIST_PATH_FILES"
 
 echo ""
 echo "Process completed successfully."
