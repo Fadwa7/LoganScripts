@@ -50,7 +50,7 @@ ERR1880172.unitigs.fa.zst
 ### Search for queries:
 
 To execute **search.sh** script, you'll need two files: paths.txt and query.fa
-- **paths.txt**: contains abolute path to your samples (.zst or .fa)
+- **paths.txt**: contains absolute path to your samples (.zst or .fa)
 - **query.fa**:  contains queries in fasta format. (make sure you use .fasta or .fa extension). <br>
   *N.B: you can use a simple file instead of the fasta format, with each query on its own line.*
 
