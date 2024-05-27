@@ -31,13 +31,17 @@ fi
 # Loop over the ID 
 while IFS= read -r ID; do
     if  [ -f "$DESTINATION_DIRECTORY/$ID.minimap2_output" ]; then
-       echo " The $ID is already processed. Skipping "
+       echo ""
+       echo "WARNING : The $ID is already processed. Skipping "
+       echo ""
     else
        if aws s3 ls "s3://logan-pub/c/$ID/" --no-sign-request > /dev/null 2>&1; then
+          echo ""
           echo "Procssing sample : $ID"
           echo ""
           /opt/minimap2/bin/minimap2-2.17-r941 -t 8 -a "$GENE_SEQUENCE" <(aws s3 cp s3://logan-pub/c/"$ID"/"$ID".contigs.fa.zst --no-sign-request - | zstdcat) | samtools view -hF4 - > "$DESTINATION_DIRECTORY"/"$ID".minimap2_output 
        else
+          echo ""
           echo "ERROR: sample $ID is not found in logan bucket"
        fi 
     fi 
