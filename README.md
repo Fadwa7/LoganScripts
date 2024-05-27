@@ -9,6 +9,9 @@ Prior to using this script, ensure you have installed the following:
 - aws CLI
 - rcgrep (v0.1.0)
 - zstd (v1.5.5)
+  * For mapping :
+- minimap2
+- samtools
 
 ### To install aws CLI, please follow the instractions via :
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
@@ -19,11 +22,12 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 ### To install zstd please execute the command line 
 We recommand installing zstd via conda.<br>
 ` conda install anaconda::zstd `
+### To install minimap2, please follow the instruction: 
+https://github.com/lh3/minimap2?tab=readme-ov-file#install
 
 ### Cloning
 Execute the command line : 
-- ` git clone https://github.com/Fadwa7/Scripts_Logan.git `
-- ` cd Scripts_Logan `
+- ` git clone https://github.com/Fadwa7/Scripts_Logan.git ` && ` cd Scripts_Logan `
   
 ## Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
@@ -98,6 +102,9 @@ CTGAATATAAACTTGTGGTAGTTGGAGCTGATGGCGTAGGCAAGAGTGC
 Process completed successfully.
 
 ```
+### Mapping 
+
+
 If you have any suggestions, please feel free to reach out to us at fadwa.el-khaddar@i2bc.paris-saclay.fr.
 
 
