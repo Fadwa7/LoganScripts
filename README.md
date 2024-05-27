@@ -105,7 +105,8 @@ Process completed successfully.
 ```
 ### Mapping 
 
-**mapping.sh** script aims to download all contigs from a pre-defined list of accessions, then map these contigs on the fly to a gene of interest. 
+**mapping.sh** is a script which aims to download all contigs from a pre-defined list of accessions, then map these contigs on the fly to a gene of interest using minimap2.
+
 To execute this script, you'll need to : 
 - **id_chicken_avail.txt**: id accessions that contain chickens genomes
 - **mc1r.fa** : gene from the chicken reference genome 
