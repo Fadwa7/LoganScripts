@@ -31,6 +31,7 @@ Execute the command line :
   
 ## Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
+The data used in this tutorial is present in `data`
 
 ### Downloading files using id_accessions.txt:
 
@@ -40,7 +41,7 @@ To execute **download.sh** script, you'll need two files: id_accessions.txt and 
   
 Execute the following command:
 
-` ./download.sh id_accessions.txt . `
+` ./download.sh   data/id_accessions.txt   . `
   
 Output :
 ```
@@ -60,7 +61,7 @@ To execute **search.sh** script, you'll need two files: paths.txt and query.fa
 
 Execute the following command:
 
-` ./search.sh  paths.txt query.fa `
+` ./search.sh    data/paths.txt   data/query.fa `
 
 In the terminal you should have this output
 
@@ -104,6 +105,7 @@ Process completed successfully.
 ```
 ### Mapping 
 
+To execute **mapping.sh** script, this script download all contigs from a pre-defined list of accessions, then map these contigs on the fly to a gene of interest. In this tutorial wi will use chicken gene : **mrc1.fa** , we will use accessions that contain chickens genomes.
 
 If you have any suggestions, please feel free to reach out to us at fadwa.el-khaddar@i2bc.paris-saclay.fr.
 
