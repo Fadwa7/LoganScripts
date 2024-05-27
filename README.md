@@ -105,8 +105,24 @@ Process completed successfully.
 ```
 ### Mapping 
 
-To execute **mapping.sh** script, this script download all contigs from a pre-defined list of accessions, then map these contigs on the fly to a gene of interest. In this tutorial wi will use chicken gene : **mrc1.fa** , we will use accessions that contain chickens genomes.
+**mapping.sh** script aims to download all contigs from a pre-defined list of accessions, then map these contigs on the fly to a gene of interest. 
+To execute this script, you'll need to : 
+- **id_chicken_avail.txt**: id accessions that contain chickens genomes
+- **mc1r.fa** : gene from the chicken reference genome 
+- **output_directory**: output directory where storing mapping result.
 
+Execute the following command:
+
+` ./mapping.sh    data/id_chicken_avail.txt   data/mc1r.fa .  `
+
+At the end, you should have mapping outputs in your output directory : 
+
+```
+SRR20750026.minimap2_output
+SRR20750040.minimap2_output
+SRR20750042.minimap2_output
+
+``` 
 If you have any suggestions, please feel free to reach out to us at fadwa.el-khaddar@i2bc.paris-saclay.fr.
 
 
