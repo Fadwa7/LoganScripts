@@ -27,7 +27,7 @@ https://github.com/lh3/minimap2?tab=readme-ov-file#install
 
 ### Cloning
 Execute the command line : 
-- ` git clone https://github.com/Fadwa7/Scripts_Logan.git ` && ` cd Scripts_Logan `
+- ` git clone https://github.com/Fadwa7/LoganScripts.git ` && ` cd LoganScripts `
   
 ## Tutorial :
 In this example we download unitigs for 5 pancreatic cancer samples and search them for KRAS oncogenic variants using 33-nt sequence queries.
