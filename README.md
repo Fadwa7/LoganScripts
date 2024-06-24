@@ -13,6 +13,8 @@ Prior to using this script, ensure you have installed the following:
 - minimap2
 - samtools
 
+**<span style="color:red">Note: If you're using the I2BC cluster, you need to connect to the node to access all these tools.</span>**
+
 ### To install aws CLI, please follow the instractions via :
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
