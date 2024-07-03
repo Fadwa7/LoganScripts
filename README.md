@@ -40,7 +40,8 @@ The data used in this tutorial is present in `data`
 To execute **download.sh** script, you'll need two files: id_accessions.txt and a directory
 - **id_accessions.txt**: contains SRR Identifiers for your samples, with each ID on a separate line.
 - **directory** : The absolute path to the output directory, e.g : . (current directory)
-- **data_type** : desired data type : contigs or unitigs  
+- **data_type** : desired data type : contigs or unitigs.
+
 Execute the following command:
 
 ` ./download.sh   data/id_accessions.txt   .  unitigs`
